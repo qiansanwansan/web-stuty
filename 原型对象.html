@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>千山鸟飞绝</p>
+
+    <p>js里并没有引入类（class）的概念，也没有真正的引入继承的机制</p>
+
+    <p>prototype </p>
+    <style></style>
+    <script>
+        function MyClass(name) {
+            // this代表类（这里确切的说应该是构造函数）MyClass新创建的实例对象，name是这个实例对象的实例变量，所以可想而知，每new一个对象也都会new一个name,各个对象的name是互不影响的
+            // 基于此，该怎样如传统意义上的那种继承机制共享属性和方法呢
+            // 所以，prototype就作为构造函数的一个属性被引入了进来
+            /** 
+             * 由于所有的实例对象共享同一个prototype对象，那么从外界看起来，prototype对象就好像是实例对象的原型，而实例对象则好像"继承"了prototype对象一样。
+            */
+            this.name = name; 
+        }
+        // MyClass.prototype.publicProperty = "我是所有MyClass的实例的共有变量";
+        MyClass.prototype = {publicProperty2:"共有参数2",
+                              publicFunction:function(){
+                                  alert("我有对象了")
+                              }};
+    
+        
+        var mc = new MyClass("fengyu");
+        var mc2 = new MyClass("陈文婷");
+
+        mc.publicFunction();
+        function MyClass2(name) {
+            this.name = name; // this代表类MyClass新创建的实例对象，name是这个实例对象的实例变量，所以可想而知，每new一个对象也都会new一个name
+        }
+        var mc3 = new MyClass2("陈文婷ting");
+
+        console.log(mc.prototype == MyClass.prototype)
+        console.log(mc.__proto__ == MyClass.prototype)
+        console.log(mc2.__proto__ == MyClass.prototype)
+
+        console.log(mc2.__proto__)
+        console.log(MyClass.prototype)
+        console.log(MyClass2.prototype)
+
+        console.log(mc.__proto__.publicProperty)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本标签</title>
+
+    <!-- 使用css给表格加上边框 -->
+    <style type="text/css">
+        table,tr,td{border:1px solid silver;}
+    </style>
+</head>
+<body>
+    <p>这是普通文本</p>
+    <!-- 加粗尽量使用strong标签 -->
+    <strong>这是粗体文本</strong>
+    <br>
+    <b>这也是粗体文本</b>
+
+    <i>斜体标签</i>
+
+    <!-- 上标 -->
+    <p>（a+b）<sup>2</sup> = a<sup>2</sup>+b<sup>2</sup>+2ab</p>
+    <!-- 下标 -->
+    <p>H<sub>2</sub>O</p>
+    <!-- 文本中划线 -->
+    <p><s>原价：66¥</s></p>
+    <!-- 下划线 -->
+    <p>
+        <u>世间多纷扰</u>
+        生死困顿寂寥
+    </p>
+    <p>普通文本</p>
+    <big>大字号文本</big><br>
+    <small>小字号文本</small>
+
+    <!-- div division 划分区域 配合css针对该区域进行样式控制 -->
+    <div>
+        <h3>这是第一首诗</h3>
+    </div>
+    <div>
+        <h3>这是第二首诗</h3>
+    </div>
+
+    <p>  水陆草木之 花</p>
+    <p>可爱者甚繁</p>
+    <p>&nbsp;&nbsp;江山如此剁椒</p>
+    
+    <hr>
+
+    <!-- 有序列表ol order list -->
+    <ol>
+        <li>有序列表</li>
+        <li>哈哈哈</li>
+        <li>😂</li>
+    </ol>
+
+    <!-- 1 a A i I -->
+    <ol type="a">
+        <li>有序列表</li>
+        <li>哈哈哈</li>
+        <li>😂</li>
+    </ol>
+
+    <!-- 无需列表 unorder list -->
+    <ul>
+        <li>有序列表</li>
+        <li>哈哈哈</li>
+        <li>😂</li>
+    </ul>
+    <ul type="circle">
+        <li>有序列表</li>
+        <li>哈哈哈</li>
+        <li>😂</li>
+    </ul>
+    <!-- 有css之后，基本不用type了 用list-style-type-->
+
+    <!-- 表格 tr tabel row  td tabel data cell -->
+    <table>
+        <caption>我是表格标题</caption>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>chinese</th>
+                <th>math</th>
+                <th>english</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>xiaoming</td>
+                <td>80</td>
+                <td>50</td>
+                <td>90</td>
+            </tr>
+
+            <tr>
+                <td>xiaohua</td>
+                <td>40</td>
+                <td>10</td>
+                <td>90</td>
+            </tr>
+
+            <tr>
+                <td>xiaoli</td>
+                <td>30</td>
+                <td>60</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>平均</td>
+                <td>60</td>
+                <td>50</td>
+                <td>70</td>
+            </tr>
+
+        </tfoot>
+    </table>
+
+    <table>
+        <caption>我是表格标题</caption>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>chinese</th>
+                <th>math</th>
+                <th>english</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">ming&&hua</td>
+                <td>80</td>
+                <td>50</td>
+                <td>90</td>
+            </tr>
+
+            <tr>
+                <!-- <td>xiaohua</td> -->
+                <td>40</td>
+                <td>10</td>
+                <td>90</td>
+            </tr>
+
+            <tr>
+                <td>xiaoli</td>
+                <td>30</td>
+                <td>60</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>平均</td>
+                <td>60</td>
+                <td>50</td>
+                <td>70</td>
+            </tr>
+
+        </tfoot>
+    </table>
+
+</body>
+</html>
