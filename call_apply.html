@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function ParentFun(){
+
+            this.gender = " is man"
+            this.parentFunSayName = function(){
+                return this.name + this.gender
+            }
+        }
+
+        function MyFun(name,a,b){
+            // 网上示例解释说是借助call实现继承，但是我觉着也有扩展或者代理的能力
+            ParentFun.call(this)
+            this.a = a
+            console.log("a= "+this.a)
+            this.name = name
+            // alert(this)
+            this.sayName = function(){
+                alert(this.name)
+            }
+        }
+    
+        var mf = new MyFun("kk","k5","k6")
+        // alert(mf.parentFunSayName())
+
+        // mf.sayName()
+        /*
+        call 能改变某个函数运行时的上下文
+        call和apply可以将一个对象指定为第一个参数，从而改变this的值
+        */
+        // MyFun("fengyu")
+        // mf.sayName.call()
+        // mf.sayName.apply()
+
+        var mf1 = new MyFun("gg","k7","k8")
+        // mf1.sayName()
+
+        mf1.sayName.call(mf)  // call 是只能改变某个函数运行时的上下文，重点是只能，
+        // alert(mf.a)
+
+        var dic = {
+            name:"dic",
+            sayName:function(){
+                alert(this.name);
+            }
+        }
+        var newDic = {
+            name:"newDic"
+        }
+        // dic.sayName()
+        // dic.sayName.call(newDic)
+
+        function Fun(a,b){
+            console.log(a)
+        }
+        Fun.call(mf,1,2)
+        Fun.apply(mf,[1,2]) // apply传参是将参数封装到一个数组内
+
+    </script>
+</head>
+<body>
+    <p>---</p>
+</body>
+
+
+</html>

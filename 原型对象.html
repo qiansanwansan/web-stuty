@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        #p1{
+            text-align: center;
+            color: bisque;
+        }
+    </style>
+    
 </head>
 <body>
     <p id = "p1">千山鸟飞绝</p>
@@ -12,12 +20,6 @@
     <p style="color: coral;text-align: center;">js里并没有引入类（class）的概念，也没有真正的引入继承的机制</p>
 
     <p>prototype </p>
-    <style>
-        #p1{
-            text-align: center;
-            color: bisque;
-        }
-    </style>
     <script>
         function MyClass(name) {
             // this代表类（这里确切的说应该是构造函数）MyClass新创建的实例对象，name是这个实例对象的实例变量，所以可想而知，每new一个对象也都会new一个name,各个对象的name是互不影响的

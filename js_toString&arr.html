@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age,gender){
+            this.name = name
+            this.age = age
+            this.gender = gender
+        }
+        var person = new Person("bilibili",19,0)
+
+        console.log(person) 
+        console.log(person.toString())
+        console.log(person.__proto__.__proto__.hasOwnProperty("toString"))
+
+        /**
+        垃圾回收（GC）
+            js创建对象后是将对象保存在堆里（暂时是这样理解的，并且person对象是这样的，后续肯定有其它情况），所以
+            person = null，只是断开了指针，但是
+            person对象之前对应的内存区域并未释放，导致内存溢出
+
+            但是js拥有自动垃圾回收机制，某些方面类似于苹果的GC，当对象的所有引用都为null时，剩下的就是js的GC操作了
+        */
+
+        // 数组内可以是不同类型的对象
+        var arr = ['ff','gg','hh','tt']
+        var res = arr.slice(0,3) // 获取
+        console.log(res)
+        console.log(arr)
+        var res1 = arr.splice(0,3) // 删除原数组，并将删除的元素合并为一个数组返回
+        console.log(res1)
+        console.log(arr)
+
+        console.log(arr.indexOf("tt")) // 0
+        arr.push(1,2.3)
+        console.log(arr)
+
+        var result = arr.splice(0,1,"pp") // 只返回删除元素组成的数组
+        console.log(result)
+        console.log(arr) // 原数组已经添加了pp字符串
+    </script>
+</body>
+</html>
